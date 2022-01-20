@@ -111,3 +111,10 @@
 .contenedor_servicios {
     height: 20vh;
 }
+
+
+@media (max-width:426px) {
+    .contenedor_habitaciones {
+        height: 550vh;
+    }
+}

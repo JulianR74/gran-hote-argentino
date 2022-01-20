@@ -1,0 +1,124 @@
+//NAV
+.thx{
+    position: fixed;
+    left:50%;
+    transform:translateX(-50%);
+    bottom: 15px;
+  }
+  nav{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    text-align:center;
+    background: url(../img/buenos-aires-g2ae0f32a4_1920.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  nav a{
+    font-family: 'Oswald', sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#ffffff;
+    margin:0 15px;
+    font-size:16px;
+    letter-spacing:1px;
+    position:relative;
+    display:inline-block;
+  }
+  nav a:before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background:#16151b;
+    top:47%;
+    animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+  }
+  nav a:hover:before{
+    animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+  }
+  
+  nav a:hover {
+      color: #ffffff;
+  }
+  @keyframes in{
+    0%{
+      width: 0;
+      left:0;
+      right:auto;
+    }
+    100%{
+      left:0;
+      right:auto;
+      width: 100%;
+    }
+  }
+  @keyframes out{
+    0%{
+      width:100%;
+      left: auto;
+      right: 0;
+    }
+    100%{
+      width: 0;
+      left: auto;
+      right: 0;
+    }
+  }
+  @keyframes show{
+    0%{
+      opacity:0;
+      transform:translateY(-10px);
+    }
+    100%{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+  
+  @for $i from 1 through 5 {
+    nav a:nth-child(#{$i}){
+      animation:show .2s #{$i*0.1+1}s ease 1 both;
+    }
+  }
+  
+  nav {
+    div {
+      img {
+        height: 110px;
+      }
+    }
+  }
+  .scroll_abajo {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    bottom: 32px;
+    align-items: center;
+    text-decoration: none;
+    transition: bottom 0.2s ease;
+      span {
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .section-banner__scroll-icon {
+      width: 16px;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+  }
+  .scroll_abajo:hover {
+    bottom: 60px;
+  }
+  
+  @media (max-width: 405px) {
+    .nav_logo {
+      height: 80px;
+    }
+  }

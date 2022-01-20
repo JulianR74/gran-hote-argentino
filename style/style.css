@@ -208,11 +208,16 @@ nav div img {
   }
 }
 
+.contenedor_inicio {
+  width: 100%;
+  height: 100vh;
+}
+
 .title {
   float: left;
   width: 100%;
   text-align: center;
-  padding-bottom: 90px;
+  padding-bottom: 40px;
   padding-top: 90px;
 }
 
@@ -242,10 +247,9 @@ nav div img {
 
 .contenedor {
   width: 100%;
-  height: 100vh;
 }
 
-.contenedor .contenedorHabitacion {
+.contenedor .contenedorInicio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,108 +262,178 @@ nav div img {
           justify-content: center;
 }
 
-.contenedor .contenedorHabitacion .contenedorHabitacionTexto {
-  height: 450px;
-  width: 450px;
+.contenedor .contenedorInicio .contenedorInicioTexto {
+  height: 550px;
+  width: 550px;
   text-align: center;
 }
 
-.contenedor .contenedorHabitacion .contenedorHabitacionTexto h3 {
+.contenedor .contenedorInicio .contenedorInicioTexto h3 {
   font-size: 52px;
 }
 
-.contenedor .contenedorHabitacion .contenedorHabitacionTexto ul li {
+.contenedor .contenedorInicio .contenedorInicioTexto ul li {
   list-style: none;
 }
 
-.contenedor .contenedorHabitacion .contenedorImagenHabitacion {
-  height: 450px;
-  width: 450px;
+.contenedor .contenedorInicio .contenedorInicioImagen {
+  height: 550px;
+  width: 550px;
 }
 
-.contenedor .contenedorHabitacion .contenedorImagenHabitacion img {
-  height: 450px;
+.contenedor .contenedorInicio .contenedorInicioImagen img {
+  height: 550px;
 }
 
 @media (max-width: 426px) {
-  .contenedor .contenedorHabitacion {
+  .contenedor_inicio {
+    height: 140vh;
+  }
+  .contenedor .contenedorInicio {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .contenedor .contenedorHabitacion .contenedorHabitacionTexto {
+  .contenedor .contenedorInicio .contenedorInicioTexto {
     height: 300px;
-    width: 300px;
+    width: 100%;
   }
-  .contenedor .contenedorHabitacion .contenedorImagenHabitacion {
+  .contenedor .contenedorInicio .contenedorInicioTexto ul {
+    padding-left: 0rem;
+  }
+  .contenedor .contenedorInicio .contenedorInicioImagen {
     height: 240px;
     width: 240px;
   }
-  .contenedor .contenedorHabitacion .contenedorImagenHabitacion img {
-    height: 240px;
+  .contenedor .contenedorInicio .contenedorInicioImagen img {
+    height: 300px;
   }
 }
 
-.contenedor {
+.contenedor_habitaciones {
+  height: 160vh;
   width: 100%;
-  height: 100vh;
 }
 
-.contenedor .contenedorServicios {
+.container__cards {
+  max-width: 1350px;
+  margin: auto;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.contenedor .contenedorServicios .contenedorServiciosTexto {
-  height: 450px;
-  width: 450px;
-  text-align: center;
+.card {
+  width: 300px;
+  margin: 10px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 
-.contenedor .contenedorServicios .contenedorServiciosTexto h3 {
-  font-size: 52px;
+.card:hover {
+  width: 350px;
 }
 
-.contenedor .contenedorServicios .contenedorServiciosTexto ul li {
-  list-style: none;
+.card .cover {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
 }
 
-.contenedor .contenedorServicios .contenedorImagenServicios {
-  height: 450px;
-  width: 450px;
+.card .cover img {
+  width: 250px;
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 40px;
+  z-index: 1;
+  -webkit-filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.5));
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
 }
 
-.contenedor .contenedorServicios .contenedorImagenServicios img {
-  height: 450px;
+.card:hover .cover img {
+  top: 0px;
+  -webkit-filter: none;
+          filter: none;
 }
 
-@media (max-width: 426px) {
-  .contenedor .contenedorServicios {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .contenedor .contenedorServicios .contenedorServiciosTexto {
-    height: 300px;
-    width: 300px;
-    float: left;
-  }
-  .contenedor .contenedorServicios .contenedorImagenServicios {
-    height: 240px;
-    width: 240px;
-  }
-  .contenedor .contenedorServicios .contenedorImagenServicios img {
-    height: 240px;
-  }
+.card .img__back {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  background-size: cover;
+  border-radius: 20px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.card:nth-of-type(1) .img__back {
+  background-image: url(../images/bg1.jpg);
+}
+
+.card:nth-of-type(2) .img__back {
+  background-image: url(../images/bg2.jpg);
+}
+
+.card:nth-of-type(3) .img__back {
+  background-image: url(../images/bg3.jpg);
+}
+
+.card:hover .img__back {
+  bottom: -40px;
+}
+
+.card .description {
+  background: white;
+  margin-top: -10px;
+  padding: 20px;
+  border-radius: 0px 0px 20px 20px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.card:hover .description {
+  padding: 40px;
+}
+
+.card .description h2 {
+  margin-top: 10px;
+}
+
+.card .description p {
+  margin-top: 10px;
+}
+
+.card .description input {
+  padding: 10px 40px;
+  margin-top: 20px;
+  border: none;
+  background: #A6359D;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.card .description input:hover {
+  background: #83277b;
+}
+
+.contenedor_servicios {
+  height: 20vh;
 }
 /*# sourceMappingURL=style.css.map */
